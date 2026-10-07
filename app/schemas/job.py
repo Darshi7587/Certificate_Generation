@@ -1,6 +1,6 @@
 from datetime import datetime
 from typing import List
-from pydantic import BaseModel, Field, field_validator
+from pydantic import BaseModel, Field, field_validator, ConfigDict
 from app.models.job import JobStatus
 from app.schemas.certificate import RecipientCreate
 
@@ -28,15 +28,16 @@ class JobCreate(BaseModel):
 
 
 class JobCreateResponse(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
     job_id: str
     status: JobStatus
     total_recipients: int
 
-    class Config:
-        from_attributes = True
-
 
 class JobDetailResponse(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
     job_id: str
     event_name: str
     event_date: str
@@ -47,6 +48,3 @@ class JobDetailResponse(BaseModel):
     failed: int
     created_at: datetime
     updated_at: datetime
-
-    class Config:
-        from_attributes = True

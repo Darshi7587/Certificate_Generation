@@ -1,6 +1,6 @@
 from datetime import datetime
 from typing import Optional, List
-from pydantic import BaseModel, EmailStr, Field, field_validator
+from pydantic import BaseModel, EmailStr, Field, field_validator, ConfigDict
 from app.models.certificate import CertificateStatus
 
 
@@ -18,6 +18,8 @@ class RecipientCreate(BaseModel):
 
 
 class CertificateResponse(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
     id: str
     job_id: str
     recipient_name: str
@@ -27,9 +29,6 @@ class CertificateResponse(BaseModel):
     error_message: Optional[str] = None
     created_at: datetime
     updated_at: datetime
-
-    class Config:
-        from_attributes = True
 
 
 class CertificateListResponse(BaseModel):
