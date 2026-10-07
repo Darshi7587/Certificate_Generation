@@ -2,7 +2,7 @@
 
 An asynchronous, production-ready REST API built with **FastAPI**, **SQLAlchemy ORM**, **ReportLab**, and **Pydantic V2** to handle bulk certificate generation requests for event recipients.
 
-Built for the **Intern - Software Development Engineer** backend assignment at **Aereo**.
+
 
 ---
 
@@ -349,11 +349,4 @@ docker-compose down
 
 ---
 
-## 🎓 Learning Outcomes & Key Concepts Mastered
 
-1. **Clean Layered Architecture**: Clear separation between routes, Pydantic schemas, SQLAlchemy models, and business services.
-2. **Failure Isolation**: Designing asynchronous background loops to log and isolate single-item errors without stopping bulk batch jobs.
-3. **Pydantic V2 Validation**: Validating nested objects, emails, and custom string rules.
-4. **Abstract Storage Design**: Preparing applications for cloud storage (AWS S3) using abstract interfaces.
-5. **Database Session Lifecycles**: Managing thread-safe DB transactions with FastAPI `get_db` dependencies and `yield`.
-6. **Automated Integration Testing**: Testing asynchronous web applications with pytest fixtures and mocking.
